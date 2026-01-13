@@ -91,17 +91,7 @@ export const profile = {
   skills: [
     {
       label: "Languages",
-      items: [
-        "JavaScript",
-        "Python",
-        "SQL",
-        "HTML",
-        "CSS",
-        "C",
-        "C++",
-        "C#",
-        "Java",
-      ],
+      items: ["JavaScript", "Python", "SQL", "HTML", "CSS", "C", "C++", "C#", "Java"],
     },
     {
       label: "Frameworks & Libraries",
