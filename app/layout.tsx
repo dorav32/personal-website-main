@@ -61,10 +61,7 @@ export default function RootLayout({
     name: "Dor Avraham",
     url: "https://doravraham.dev/",
     image: "https://doravraham.dev/opengraph-image",
-    sameAs: [
-      "https://github.com/dorav32",
-      "https://www.linkedin.com/in/dor-avraham-sd",
-    ],
+    sameAs: ["https://github.com/dorav32", "https://www.linkedin.com/in/dor-avraham-sd"],
   };
 
   const websiteJsonLd = {
@@ -79,8 +76,11 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        suppressHydrationWarning
+      >
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify([websiteJsonLd, personJsonLd]) }}
