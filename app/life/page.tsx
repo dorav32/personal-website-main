@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 
 import { Container } from "../components/Container";
 import { Section } from "../components/Section";
@@ -41,28 +40,6 @@ export default function LifePage() {
                 </p>
               </div>
             ))}
-          </div>
-        </Section>
-
-        <Section title={life.family.headline} eyebrow="Family">
-          <div className="grid gap-6 lg:grid-cols-[1fr_1fr]">
-            <div className="rounded-3xl border border-black/10 bg-white p-6 shadow-sm shadow-black/5 dark:border-white/15 dark:bg-black dark:shadow-none">
-              <p className="text-base leading-7 text-zinc-600 dark:text-zinc-400">
-                {life.family.copy}
-              </p>
-            </div>
-
-            <div className="overflow-hidden rounded-3xl border border-black/10 bg-white shadow-sm shadow-black/5 dark:border-white/15 dark:bg-black dark:shadow-none">
-              <div className="relative aspect-[16/9] w-full bg-zinc-100 dark:bg-white/5">
-                <Image
-                  src={life.family.photo.src}
-                  alt={life.family.photo.alt}
-                  fill
-                  sizes="(min-width: 1024px) 520px, 100vw"
-                  className="object-cover"
-                />
-              </div>
-            </div>
           </div>
         </Section>
       </Container>

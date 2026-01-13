@@ -23,26 +23,14 @@ export const life = {
         "My favorite tiny universe: simple rules, infinite depth. Always learning (always blundering).",
     },
     {
-      title: "Tennis",
+      title: "Gym and soccer",
       description:
-        "Fast feet, fast decisions. It’s the perfect mental reset after a long day of problem-solving.",
+        "Fast feet, fast decisions. It's the perfect mental reset after a long day of problem-solving.",
     },
     {
-      title: "Snowboarding",
+      title: "Guitar",
       description:
-        "Chasing clean lines, cold air, and that one perfect run that makes the whole trip worth it.",
+        "Helping in developing musical and coordination skills makes the routine much more spicy.",
     },
   ] satisfies LifeHobby[],
-  family: {
-    headline: "My favorite team",
-    copy: "My lovely wife is Reut, my son is Or, and my daughter is Lia — I love them all very much.",
-    photo: {
-      /**
-       * Place your family photo at: `personal-website/public/life/family.jpg`
-       * (we don’t commit binary files from this environment).
-       */
-      src: "/life/family.jpg",
-      alt: "Dor with his family outdoors",
-    },
-  },
 } as const;
