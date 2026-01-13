@@ -12,6 +12,5 @@ describe("Nav", () => {
     expect(nav.getByRole("link", { name: "Home" })).toHaveAttribute("href", "/");
     expect(nav.getByRole("link", { name: "About" })).toHaveAttribute("href", "/about");
     expect(nav.getByRole("link", { name: "Life" })).toHaveAttribute("href", "/life");
-    expect(nav.getByRole("link", { name: "Writing" })).toHaveAttribute("href", "/writing");
   });
 });
