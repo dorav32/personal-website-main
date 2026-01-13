@@ -98,9 +98,6 @@ export function buildSystemPrompt(): string {
   });
   sections.push("");
 
-  sections.push(`Family: ${life.family.copy}`);
-  sections.push("");
-
   // Links
   sections.push("## Links");
   profile.links.forEach((link) => {

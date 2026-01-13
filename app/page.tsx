@@ -97,12 +97,14 @@ export default function Home() {
           <div className="rounded-3xl border border-black/10 bg-white p-6 shadow-sm shadow-black/5 sm:p-8 dark:border-white/15 dark:bg-black dark:shadow-none">
             <p className="text-lg font-medium text-zinc-950 dark:text-zinc-50">
               Fresh Graduate —{" "}
-              <span className="text-emerald-700 dark:text-emerald-300">Looking for opportunities</span>
+              <span className="text-emerald-700 dark:text-emerald-300">
+                Looking for opportunities
+              </span>
             </p>
             <p className="mt-3 max-w-3xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
-              I recently graduated from HIT with a B.Sc. in Computer Science (GPA: 90). I&apos;m actively
-              seeking a Full-Stack Developer position where I can apply my skills in React, Node.js,
-              Python, and problem-solving to build impactful products.
+              I recently graduated from HIT with a B.Sc. in Computer Science (GPA: 90). I&apos;m
+              actively seeking a Full-Stack Developer position where I can apply my skills in React,
+              Node.js, Python, and problem-solving to build impactful products.
             </p>
           </div>
         </Section>
@@ -117,8 +119,8 @@ export default function Home() {
                 Shopping Web Project
               </h3>
               <p className="mt-3 text-sm leading-6 text-zinc-600 dark:text-zinc-400">
-                Developed a complete e-commerce platform integrating frontend and backend using Java and
-                React with REST APIs.
+                Developed a complete e-commerce platform integrating frontend and backend using Java
+                and React with REST APIs.
               </p>
               <a
                 href="https://github.com/dorav32/ShoppingWeb"
