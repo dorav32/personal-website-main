@@ -18,23 +18,11 @@ export const metadata: Metadata = {
   },
 };
 
-type ArticleEntry = (typeof writing.articles)[number];
-
-const dateFormat = new Intl.DateTimeFormat('en-US', {
-  year: 'numeric',
-  month: 'short',
-  day: 'numeric',
-});
-
-function formatDate(iso: string): string {
-  return dateFormat.format(new Date(iso));
-}
-
 export default function WritingPage() {
   const emailHref =
     profile.links.find((l) => l.label === 'Email')?.href ?? 'mailto:hypsters@gmail.com';
 
-  const hasArticles = writing.articles.length > 0;
+  const hasFeatured = writing.featured.length > 0;
 
   return (
     <div className="font-sans">
@@ -45,22 +33,20 @@ export default function WritingPage() {
               Writing
             </h1>
             <p className="mt-5 text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-              {writing.intro}
+              {writing.series.note}
             </p>
           </div>
         </div>
 
-        {hasArticles && (
-          <Section title="Articles" eyebrow="Latest">
+        {hasFeatured && (
+          <Section title="Featured" eyebrow="Latest">
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {writing.articles.map((a: ArticleEntry) => (
+              {writing.featured.map((item) => (
                 <LinkCard
-                  key={a.url}
-                  href={a.url}
-                  external
-                  title={a.title}
-                  description={a.description}
-                  meta={formatDate(a.date)}
+                  key={item.href}
+                  href={item.href}
+                  title={item.title}
+                  description={item.note ?? ''}
                 />
               ))}
             </div>
@@ -68,8 +54,8 @@ export default function WritingPage() {
         )}
 
         <Section
-          title={hasArticles ? 'More coming soon' : 'Coming soon'}
-          eyebrow={hasArticles ? 'Next' : 'Writing'}
+          title={hasFeatured ? 'More coming soon' : 'Coming soon'}
+          eyebrow={hasFeatured ? 'Next' : 'Writing'}
         >
           <div className="rounded-3xl border border-black/10 bg-white p-6 shadow-sm shadow-black/5 sm:p-8 dark:border-white/15 dark:bg-black dark:shadow-none">
             <p className="text-base leading-7 text-zinc-600 dark:text-zinc-400">
