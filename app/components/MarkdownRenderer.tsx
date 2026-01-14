@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import React, { createContext, useContext } from "react";
-import ReactMarkdown from "react-markdown";
+import React, { createContext, useContext } from 'react';
+import ReactMarkdown from 'react-markdown';
 
 interface MarkdownRendererProps {
   content: string;
@@ -10,17 +10,17 @@ interface MarkdownRendererProps {
 
 // Shared markdown component styles
 const MARKDOWN_STYLES = {
-  text: "text-zinc-950 dark:text-zinc-50",
-  textSmall: "text-sm text-zinc-950 dark:text-zinc-50",
-  heading: "text-zinc-950 dark:text-zinc-50",
-  link: "text-emerald-600 underline hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300",
+  text: 'text-zinc-950 dark:text-zinc-50',
+  textSmall: 'text-sm text-zinc-950 dark:text-zinc-50',
+  heading: 'text-zinc-950 dark:text-zinc-50',
+  link: 'text-emerald-600 underline hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300',
   codeInline:
-    "rounded bg-zinc-100 px-1.5 py-0.5 font-mono text-xs text-zinc-950 dark:bg-zinc-800 dark:text-zinc-50",
+    'rounded bg-zinc-100 px-1.5 py-0.5 font-mono text-xs text-zinc-950 dark:bg-zinc-800 dark:text-zinc-50',
   codeBlock:
-    "block overflow-x-auto rounded-lg bg-zinc-100 p-3 font-mono text-xs text-zinc-950 dark:bg-zinc-800 dark:text-zinc-50",
+    'block overflow-x-auto rounded-lg bg-zinc-100 p-3 font-mono text-xs text-zinc-950 dark:bg-zinc-800 dark:text-zinc-50',
   blockquote:
-    "my-2 border-l-4 border-zinc-300 pl-4 text-zinc-700 italic dark:border-zinc-600 dark:text-zinc-300",
-  hr: "my-4 border-zinc-200 dark:border-zinc-700",
+    'my-2 border-l-4 border-zinc-300 pl-4 text-zinc-700 italic dark:border-zinc-600 dark:text-zinc-300',
+  hr: 'my-4 border-zinc-200 dark:border-zinc-700',
 } as const;
 
 // Context to track if we're inside a <pre> element (fenced code block)
@@ -49,7 +49,7 @@ function CodeComponent({
   );
 }
 
-export function MarkdownRenderer({ content, className = "" }: MarkdownRendererProps) {
+export function MarkdownRenderer({ content, className = '' }: MarkdownRendererProps) {
   return (
     <div className={`prose prose-sm dark:prose-invert max-w-none ${className}`}>
       <ReactMarkdown

@@ -1,12 +1,12 @@
-import Link from "next/link";
+import Link from 'next/link';
 
-import { Logo } from "./Logo";
-import { Container } from "./Container";
+import { Logo } from './Logo';
+import { Container } from './Container';
 
 const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/life", label: "Life" },
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/life', label: 'Life' },
 ] as const;
 
 export function Nav() {

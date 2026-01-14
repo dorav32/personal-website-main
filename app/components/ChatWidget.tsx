@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
-import Image from "next/image";
-import { Chat } from "./Chat";
+import { useEffect, useState } from 'react';
+import Image from 'next/image';
+import { Chat } from './Chat';
 
 export function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,13 +10,13 @@ export function ChatWidget() {
   // Close on Escape key
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && isOpen) {
+      if (e.key === 'Escape' && isOpen) {
         setIsOpen(false);
       }
     };
 
-    document.addEventListener("keydown", handleEscape);
-    return () => document.removeEventListener("keydown", handleEscape);
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
   }, [isOpen]);
 
   // Callback ref to focus input when it mounts (only when chat is open)
@@ -71,7 +71,7 @@ export function ChatWidget() {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-full bg-zinc-950 shadow-lg transition-all hover:scale-110 focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:outline-none dark:bg-zinc-50"
-        aria-label={isOpen ? "Close chat" : "Open chat"}
+        aria-label={isOpen ? 'Close chat' : 'Open chat'}
       >
         {isOpen ? (
           <svg

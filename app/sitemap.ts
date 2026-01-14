@@ -1,29 +1,29 @@
-import type { MetadataRoute } from "next";
+import type { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://doravraham.dev/",
+      url: 'https://doravraham.dev/',
       lastModified: new Date(),
-      changeFrequency: "weekly",
+      changeFrequency: 'weekly',
       priority: 1,
     },
     {
-      url: "https://doravraham.dev/about",
+      url: 'https://doravraham.dev/about',
       lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: "https://doravraham.dev/life",
+      url: 'https://doravraham.dev/life',
       lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
-      url: "https://doravraham.dev/writing",
+      url: 'https://doravraham.dev/writing',
       lastModified: new Date(),
-      changeFrequency: "weekly",
+      changeFrequency: 'weekly',
       priority: 0.8,
     },
   ];

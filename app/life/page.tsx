@@ -1,16 +1,16 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
-import { Container } from "../components/Container";
-import { Section } from "../components/Section";
-import { life } from "../../content/life";
+import { Container } from '../components/Container';
+import { Section } from '../components/Section';
+import { life } from '../../content/life';
 
 export const metadata: Metadata = {
-  title: "Life",
+  title: 'Life',
   description: "Dor's life outside of work: hobbies, interests, and what I enjoy.",
   openGraph: {
-    title: "Life · doravraham",
+    title: 'Life · doravraham',
     description: "Dor's life outside of work: hobbies, interests, and what I enjoy.",
-    url: "/life",
+    url: '/life',
   },
 };
 
