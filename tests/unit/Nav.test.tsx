@@ -3,7 +3,7 @@ import { render, screen, within } from '@testing-library/react';
 import { Nav } from '../../app/components/Nav';
 
 describe('Nav', () => {
-  it('exposes primary navigation links by their accessible names', () => {
+  it('exposes primary navigation links by their accessible names', async () => {
     const { container } = render(<Nav />);
 
     const navigation = screen.getByRole('navigation');
@@ -14,6 +14,6 @@ describe('Nav', () => {
     expect(nav.getByRole('link', { name: 'Life' })).toHaveAttribute('href', '/life');
 
     // Accessibility check
-    expect(container).toBeAccessible();
+    await expect(container).toBeAccessible();
   });
 });
