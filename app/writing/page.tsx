@@ -1,26 +1,27 @@
-import type { Metadata } from 'next';
+import type { Metadata } from "next";
 
-import { Container } from '../components/Container';
-import { Section } from '../components/Section';
-import { LinkCard } from '../components/LinkCard';
-import { profile } from '../../content/profile';
-import { writing } from '../../content/writing';
+import { Container } from "../components/Container";
+import { Section } from "../components/Section";
+import { LinkCard } from "../components/LinkCard";
+import { profile } from "../../content/profile";
+import { writing } from "../../content/writing";
 
 export const metadata: Metadata = {
-  title: 'Writing',
+  title: "Writing",
   description:
-    'Writing by Dor Avraham on software development, learning, and building modern web applications.',
+    "Writing by Dor Avraham on software development, learning, and building modern web applications.",
   openGraph: {
-    title: 'Writing · doravraham',
+    title: "Writing · doravraham",
     description:
-      'Writing by Dor Avraham on software development, learning, and building modern web applications.',
-    url: '/writing',
+      "Writing by Dor Avraham on software development, learning, and building modern web applications.",
+    url: "/writing",
   },
 };
 
 export default function WritingPage() {
   const emailHref =
-    profile.links.find((l) => l.label === 'Email')?.href ?? 'mailto:hypsters@gmail.com';
+    profile.links.find((l) => l.label === "Email")?.href ??
+    "mailto:hypsters@gmail.com";
 
   const hasFeatured = writing.featured.length > 0;
 
@@ -46,7 +47,7 @@ export default function WritingPage() {
                   key={item.href}
                   href={item.href}
                   title={item.title}
-                  description={item.note ?? ''}
+                  description={item.note ?? ""}
                 />
               ))}
             </div>
@@ -54,19 +55,20 @@ export default function WritingPage() {
         )}
 
         <Section
-          title={hasFeatured ? 'More coming soon' : 'Coming soon'}
-          eyebrow={hasFeatured ? 'Next' : 'Writing'}
+          title={hasFeatured ? "More coming soon" : "Coming soon"}
+          eyebrow={hasFeatured ? "Next" : "Writing"}
         >
           <div className="rounded-3xl border border-black/10 bg-white p-6 shadow-sm shadow-black/5 sm:p-8 dark:border-white/15 dark:bg-black dark:shadow-none">
             <p className="text-base leading-7 text-zinc-600 dark:text-zinc-400">
-              I&apos;m planning to write about my journey as a developer, projects I&apos;m
-              building, and lessons learned. Want to know when I publish?{' '}
+              I&apos;m planning to write about my journey as a developer,
+              projects I&apos;m building, and lessons learned. Want to know when
+              I publish?{" "}
               <a
                 href={emailHref}
                 className="font-medium text-emerald-700 hover:text-emerald-600 dark:text-emerald-300 dark:hover:text-emerald-200"
               >
                 Email me
-              </a>{' '}
+              </a>{" "}
               and I&apos;ll let you know.
             </p>
           </div>

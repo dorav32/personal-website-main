@@ -1,26 +1,27 @@
-import type { Metadata } from 'next';
-import Image from 'next/image';
+import type { Metadata } from "next";
+import Image from "next/image";
 
-import { Container } from './components/Container';
-import { Section } from './components/Section';
-import { profile } from '../content/profile';
-import dor from './dor.jpeg';
+import { Container } from "./components/Container";
+import { Section } from "./components/Section";
+import { profile } from "../content/profile";
+import dor from "./dor.jpeg";
 
 export const metadata: Metadata = {
-  title: 'Home',
+  title: "Home",
   description:
-    'Dor Avraham — Computer Science Graduate | Full-Stack Developer. Passionate about problem-solving, algorithms, and modern web applications.',
+    "Dor Avraham — Computer Science Graduate | Full-Stack Developer. Passionate about problem-solving, algorithms, and modern web applications.",
   openGraph: {
-    title: 'doravraham',
+    title: "doravraham",
     description:
-      'Dor Avraham — Computer Science Graduate | Full-Stack Developer. Passionate about problem-solving, algorithms, and modern web applications.',
-    url: '/',
+      "Dor Avraham — Computer Science Graduate | Full-Stack Developer. Passionate about problem-solving, algorithms, and modern web applications.",
+    url: "/",
   },
 };
 
 export default function Home() {
   const emailHref =
-    profile.links.find((l) => l.label === 'Email')?.href ?? 'mailto:hypsters@gmail.com';
+    profile.links.find((l) => l.label === "Email")?.href ??
+    "mailto:hypsters@gmail.com";
 
   return (
     <div className="font-sans">
@@ -59,7 +60,7 @@ export default function Home() {
                   </a>
                   <div className="flex flex-wrap justify-center gap-2 sm:justify-start">
                     {profile.links
-                      .filter((l) => l.label !== 'Email')
+                      .filter((l) => l.label !== "Email")
                       .map((l) => (
                         <a
                           key={l.href}
@@ -87,7 +88,9 @@ export default function Home() {
                 key={h}
                 className="rounded-2xl border border-black/10 bg-white p-5 shadow-sm shadow-black/5 dark:border-white/15 dark:bg-black dark:shadow-none"
               >
-                <p className="text-sm leading-6 font-medium text-zinc-950 dark:text-zinc-50">{h}</p>
+                <p className="text-sm leading-6 font-medium text-zinc-950 dark:text-zinc-50">
+                  {h}
+                </p>
               </div>
             ))}
           </div>
@@ -96,15 +99,16 @@ export default function Home() {
         <Section title="Now" eyebrow="Currently">
           <div className="rounded-3xl border border-black/10 bg-white p-6 shadow-sm shadow-black/5 sm:p-8 dark:border-white/15 dark:bg-black dark:shadow-none">
             <p className="text-lg font-medium text-zinc-950 dark:text-zinc-50">
-              Fresh Graduate —{' '}
+              Fresh Graduate —{" "}
               <span className="text-emerald-700 dark:text-emerald-300">
                 Looking for opportunities
               </span>
             </p>
             <p className="mt-3 max-w-3xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
-              I recently graduated from HIT with a B.Sc. in Computer Science (GPA: 90). I&apos;m
-              actively seeking a Full-Stack Developer position where I can apply my skills in React,
-              Node.js, Python, and problem-solving to build impactful products.
+              I recently graduated from HIT with a B.Sc. in Computer Science
+              (GPA: 90). I&apos;m actively seeking a Full-Stack Developer
+              position where I can apply my skills in React, Node.js, Python,
+              and problem-solving to build impactful products.
             </p>
           </div>
         </Section>
@@ -119,8 +123,8 @@ export default function Home() {
                 Shopping Web Project
               </h3>
               <p className="mt-3 text-sm leading-6 text-zinc-600 dark:text-zinc-400">
-                Developed a complete e-commerce platform integrating frontend and backend using Java
-                and React with REST APIs.
+                Developed a complete e-commerce platform integrating frontend
+                and backend using Java and React with REST APIs.
               </p>
               <a
                 href="https://github.com/dorav32/ShoppingWeb"
@@ -139,8 +143,8 @@ export default function Home() {
                 Dor chatbot
               </h3>
               <p className="mt-3 text-sm leading-6 text-zinc-600 dark:text-zinc-400">
-                A bot trained on my public content to help you find information about my skills,
-                projects, and experience.
+                A bot trained on my public content to help you find information
+                about my skills, projects, and experience.
               </p>
             </div>
           </div>

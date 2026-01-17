@@ -1,6 +1,6 @@
-import { profile } from '../content/profile';
-import { writing } from '../content/writing';
-import { life } from '../content/life';
+import { profile } from "../content/profile";
+import { writing } from "../content/writing";
+import { life } from "../content/life";
 
 /**
  * Builds a comprehensive system prompt containing Dor's content.
@@ -10,40 +10,42 @@ export function buildSystemPrompt(): string {
   const sections: string[] = [];
 
   // Introduction
-  sections.push('You are a helpful assistant that answers questions about Dor Avraham.');
   sections.push(
-    "Answer questions about Dor's background, experience, skills, writing, and interests."
+    "You are a helpful assistant that answers questions about Dor Avraham.",
   );
   sections.push(
-    'When possible, cite specific sources (e.g., mention specific articles, companies, or experiences).'
+    "Answer questions about Dor's background, experience, skills, writing, and interests.",
   );
-  sections.push('Be helpful, concise, and accurate.');
   sections.push(
-    'Format your responses using Markdown for better readability: use **bold** for emphasis, lists for multiple items, `code` for technical terms, and links when referencing URLs.\n'
+    "When possible, cite specific sources (e.g., mention specific articles, companies, or experiences).",
+  );
+  sections.push("Be helpful, concise, and accurate.");
+  sections.push(
+    "Format your responses using Markdown for better readability: use **bold** for emphasis, lists for multiple items, `code` for technical terms, and links when referencing URLs.\n",
   );
 
   // About
-  sections.push('## About Dor');
+  sections.push("## About Dor");
   sections.push(`Name: ${profile.name}`);
   sections.push(`Title: ${profile.title}`);
   sections.push(`Location: ${profile.location}`);
   sections.push(`Experience: ${profile.yearsExperience}\n`);
   sections.push(`Tagline: ${profile.tagline}\n`);
 
-  sections.push('Bio:');
+  sections.push("Bio:");
   profile.bio.forEach((paragraph) => {
     sections.push(`- ${paragraph}`);
   });
-  sections.push('');
+  sections.push("");
 
-  sections.push('Key Focus Areas:');
+  sections.push("Key Focus Areas:");
   profile.highlights.forEach((highlight) => {
     sections.push(`- ${highlight}`);
   });
-  sections.push('');
+  sections.push("");
 
   // Experience
-  sections.push('## Professional Experience');
+  sections.push("## Professional Experience");
   profile.experience.forEach((exp) => {
     sections.push(`\n${exp.title} at ${exp.company}`);
     sections.push(`${exp.start} - ${exp.end}`);
@@ -53,32 +55,32 @@ export function buildSystemPrompt(): string {
       });
     }
   });
-  sections.push('');
+  sections.push("");
 
   // Skills
-  sections.push('## Skills');
+  sections.push("## Skills");
   profile.skills.forEach((group) => {
     sections.push(`\n${group.label}:`);
     group.items.forEach((item) => {
       sections.push(`- ${item}`);
     });
   });
-  sections.push('');
+  sections.push("");
 
   // Education
-  sections.push('## Education');
+  sections.push("## Education");
   profile.education.forEach((edu) => {
     sections.push(`${edu.degree} from ${edu.school}`);
   });
-  sections.push('');
+  sections.push("");
 
   // Writing
-  sections.push('## Writing');
+  sections.push("## Writing");
   sections.push(`\nSeries: ${writing.series.title}`);
   sections.push(`Description: ${writing.series.note}`);
   sections.push(`URL: ${writing.series.href}\n`);
 
-  sections.push('Featured Articles:');
+  sections.push("Featured Articles:");
   writing.featured.forEach((article) => {
     sections.push(`\n- ${article.title}`);
     if (article.note) {
@@ -86,23 +88,23 @@ export function buildSystemPrompt(): string {
     }
     sections.push(`  URL: ${article.href}`);
   });
-  sections.push('');
+  sections.push("");
 
   // Interests & Life
-  sections.push('## Personal Interests');
+  sections.push("## Personal Interests");
   sections.push(`\n${life.intro}\n`);
 
-  sections.push('Hobbies:');
+  sections.push("Hobbies:");
   life.hobbies.forEach((hobby) => {
     sections.push(`- ${hobby.title}: ${hobby.description}`);
   });
-  sections.push('');
+  sections.push("");
 
   // Links
-  sections.push('## Links');
+  sections.push("## Links");
   profile.links.forEach((link) => {
     sections.push(`- ${link.label}: ${link.href}`);
   });
 
-  return sections.join('\n');
+  return sections.join("\n");
 }
