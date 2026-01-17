@@ -35,6 +35,9 @@ importers:
         specifier: ^10.1.0
         version: 10.1.0(@types/react@19.2.7)(react@19.2.1)
     devDependencies:
+      '@sa11y/vitest':
+        specifier: ^8.0.0
+        version: 8.0.0(@types/debug@4.1.12)(@types/node@20.19.26)(jiti@2.6.1)(jsdom@26.1.0(bufferutil@4.0.9)(utf-8-validate@6.0.5))(lightningcss@1.30.2)
       '@tailwindcss/postcss':
         specifier: ^4
         version: 4.1.18
@@ -1272,6 +1275,48 @@ packages:
         integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==,
       }
 
+  '@sa11y/assert@8.0.0':
+    resolution:
+      {
+        integrity: sha512-pLB+53VnRdlf/YRTtMFbkcdf8DRRz7mztB1D+s19A7BwmXDsUi18CaGXjjX/pyXVQEcqo428uIaS3fiWtsHnAA==,
+      }
+    engines: { node: ^20 || ^22 || ^24 }
+
+  '@sa11y/common@8.0.0':
+    resolution:
+      {
+        integrity: sha512-Rktj6V+mwiSpmwnNjaoQoU4aTA2zCwjv5ZkGYzWjlX4fUKv4hMy2U69J2G8j+giFAJD1PcF2v0osYWHAUXF97Q==,
+      }
+    engines: { node: ^20 || ^22 || ^24 }
+
+  '@sa11y/format@8.0.0':
+    resolution:
+      {
+        integrity: sha512-j5z0ZOhN6kmEh+nwa3e+ChWpCnitoUn8MJoPFclGxVRv8t88PnuO97ZIqrxnasVrP1tfvTuFOT6Igg16sFApBw==,
+      }
+    engines: { node: ^20 || ^22 || ^24 }
+
+  '@sa11y/matcher@8.0.0':
+    resolution:
+      {
+        integrity: sha512-3wgzSdnOnjOgUIJLL0VFSFrx1UQLzw6zR+k4qu1aor0h/BasPl80g16cKVWRMIIbG0afmBj/Rzeuqb41KKHE3g==,
+      }
+    engines: { node: ^20 || ^22 || ^24 }
+
+  '@sa11y/preset-rules@8.0.0':
+    resolution:
+      {
+        integrity: sha512-ujO2DUdPn3hUHd1mQJD1VlqAO/W56LJT3Sqr+gZutA1eN1LKv3X6Aoh3PjZ72TbbA1qi5Bhgjym8kLUDdyLF6Q==,
+      }
+    engines: { node: ^20 || ^22 || ^24 }
+
+  '@sa11y/vitest@8.0.0':
+    resolution:
+      {
+        integrity: sha512-FrYMle59PSgQyCNOL2LiZacVaRTLphtSvHTzskIXglKyTo/iwUinK1mRFQgN/BSO6EQdGRhLOK+bWSzfowibLw==,
+      }
+    engines: { node: ^20 || ^22 || ^24 }
+
   '@standard-schema/spec@1.0.0':
     resolution:
       {
@@ -2222,6 +2267,13 @@ packages:
         integrity: sha512-wvUjBtSGN7+7SjNpq/9M2Tg350UZD3q62IFZLbRAR1bSMlCo1ZaeW+BJ+D090e4hIIZLBcTDWe4Mh4jvUDajzQ==,
       }
     engines: { node: '>= 0.4' }
+
+  axe-core@4.10.3:
+    resolution:
+      {
+        integrity: sha512-Xm7bpRXnDSX2YE2YFfBk2FnF0ep6tmG7xPh8iHee8MIcrgq762Nkce856dYtJYLkuIoYZvGfTs/PbZhideTcEg==,
+      }
+    engines: { node: '>=4' }
 
   axe-core@4.11.0:
     resolution:
@@ -6001,6 +6053,62 @@ snapshots:
 
   '@rtsao/scc@1.1.0': {}
 
+  '@sa11y/assert@8.0.0':
+    dependencies:
+      '@sa11y/common': 8.0.0
+      '@sa11y/format': 8.0.0
+      '@sa11y/preset-rules': 8.0.0
+      axe-core: 4.10.3
+
+  '@sa11y/common@8.0.0':
+    dependencies:
+      axe-core: 4.10.3
+
+  '@sa11y/format@8.0.0':
+    dependencies:
+      '@sa11y/common': 8.0.0
+      '@sa11y/preset-rules': 8.0.0
+      axe-core: 4.10.3
+
+  '@sa11y/matcher@8.0.0':
+    dependencies:
+      '@sa11y/assert': 8.0.0
+      '@sa11y/format': 8.0.0
+      '@sa11y/preset-rules': 8.0.0
+
+  '@sa11y/preset-rules@8.0.0':
+    dependencies:
+      '@sa11y/common': 8.0.0
+
+  '@sa11y/vitest@8.0.0(@types/debug@4.1.12)(@types/node@20.19.26)(jiti@2.6.1)(jsdom@26.1.0(bufferutil@4.0.9)(utf-8-validate@6.0.5))(lightningcss@1.30.2)':
+    dependencies:
+      '@sa11y/assert': 8.0.0
+      '@sa11y/format': 8.0.0
+      '@sa11y/matcher': 8.0.0
+      '@sa11y/preset-rules': 8.0.0
+      '@vitest/runner': 3.2.4
+      vitest: 3.2.4(@types/debug@4.1.12)(@types/node@20.19.26)(jiti@2.6.1)(jsdom@26.1.0(bufferutil@4.0.9)(utf-8-validate@6.0.5))(lightningcss@1.30.2)
+    transitivePeerDependencies:
+      - '@edge-runtime/vm'
+      - '@types/debug'
+      - '@types/node'
+      - '@vitest/browser'
+      - '@vitest/ui'
+      - happy-dom
+      - jiti
+      - jsdom
+      - less
+      - lightningcss
+      - msw
+      - sass
+      - sass-embedded
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+      - tsx
+      - yaml
+
   '@standard-schema/spec@1.0.0': {}
 
   '@swc/helpers@0.5.15':
@@ -6627,6 +6735,8 @@ snapshots:
   available-typed-arrays@1.0.7:
     dependencies:
       possible-typed-array-names: 1.1.0
+
+  axe-core@4.10.3: {}
 
   axe-core@4.11.0: {}
 

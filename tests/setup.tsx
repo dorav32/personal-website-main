@@ -1,6 +1,11 @@
 import React from 'react';
 import '@testing-library/jest-dom/vitest';
 import { vi } from 'vitest';
+import { setup as sa11ySetup } from '@sa11y/vitest';
+
+// Setup accessibility testing
+// This adds the toBeAccessible() matcher to Vitest
+sa11ySetup();
 
 // Keep mocks minimal and only at framework boundaries.
 // We want tests to exercise real component behavior (RTL style), not Next internals.
