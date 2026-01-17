@@ -1,12 +1,12 @@
-import Link from "next/link";
+import Link from 'next/link';
 
-import { Container } from "./Container";
-import { profile } from "../../content/profile";
+import { Container } from './Container';
+import { profile } from '../../content/profile';
 
 const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/life", label: "Life" },
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/life', label: 'Life' },
 ] as const;
 
 export function Footer() {
@@ -36,8 +36,8 @@ export function Footer() {
                 <a
                   key={l.href}
                   href={l.href}
-                  target={l.href.startsWith("http") ? "_blank" : undefined}
-                  rel={l.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  target={l.href.startsWith('http') ? '_blank' : undefined}
+                  rel={l.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                   className="rounded-full px-3 py-1.5 text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-950 focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:outline-none dark:text-zinc-300 dark:hover:text-zinc-50"
                 >
                   {l.label}

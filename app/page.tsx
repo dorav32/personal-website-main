@@ -1,26 +1,26 @@
-import type { Metadata } from "next";
-import Image from "next/image";
+import type { Metadata } from 'next';
+import Image from 'next/image';
 
-import { Container } from "./components/Container";
-import { Section } from "./components/Section";
-import { profile } from "../content/profile";
-import dor from "./dor.jpeg";
+import { Container } from './components/Container';
+import { Section } from './components/Section';
+import { profile } from '../content/profile';
+import dor from './dor.jpeg';
 
 export const metadata: Metadata = {
-  title: "Home",
+  title: 'Home',
   description:
-    "Dor Avraham — Computer Science Graduate | Full-Stack Developer. Passionate about problem-solving, algorithms, and modern web applications.",
+    'Dor Avraham — Computer Science Graduate | Full-Stack Developer. Passionate about problem-solving, algorithms, and modern web applications.',
   openGraph: {
-    title: "doravraham",
+    title: 'doravraham',
     description:
-      "Dor Avraham — Computer Science Graduate | Full-Stack Developer. Passionate about problem-solving, algorithms, and modern web applications.",
-    url: "/",
+      'Dor Avraham — Computer Science Graduate | Full-Stack Developer. Passionate about problem-solving, algorithms, and modern web applications.',
+    url: '/',
   },
 };
 
 export default function Home() {
   const emailHref =
-    profile.links.find((l) => l.label === "Email")?.href ?? "mailto:hypsters@gmail.com";
+    profile.links.find((l) => l.label === 'Email')?.href ?? 'mailto:hypsters@gmail.com';
 
   return (
     <div className="font-sans">
@@ -59,7 +59,7 @@ export default function Home() {
                   </a>
                   <div className="flex flex-wrap justify-center gap-2 sm:justify-start">
                     {profile.links
-                      .filter((l) => l.label !== "Email")
+                      .filter((l) => l.label !== 'Email')
                       .map((l) => (
                         <a
                           key={l.href}
@@ -96,7 +96,7 @@ export default function Home() {
         <Section title="Now" eyebrow="Currently">
           <div className="rounded-3xl border border-black/10 bg-white p-6 shadow-sm shadow-black/5 sm:p-8 dark:border-white/15 dark:bg-black dark:shadow-none">
             <p className="text-lg font-medium text-zinc-950 dark:text-zinc-50">
-              Fresh Graduate —{" "}
+              Fresh Graduate —{' '}
               <span className="text-emerald-700 dark:text-emerald-300">
                 Looking for opportunities
               </span>

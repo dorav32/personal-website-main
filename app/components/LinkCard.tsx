@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { ReactNode } from 'react';
 
 export function LinkCard({
   title,
@@ -23,7 +23,7 @@ export function LinkCard({
       <div className="flex items-start justify-between gap-6">
         <div>
           <p className="text-sm font-medium tracking-wide text-zinc-500 dark:text-zinc-400">
-            {meta ?? "Writing"}
+            {meta ?? 'Writing'}
           </p>
           <h3 className="mt-2 text-xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
             {title}

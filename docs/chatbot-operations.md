@@ -393,11 +393,11 @@ graph LR
 ```typescript
 console.log(
   JSON.stringify({
-    type: "chat_request",
-    ip: req.headers.get("x-forwarded-for"),
+    type: 'chat_request',
+    ip: req.headers.get('x-forwarded-for'),
     timestamp: new Date().toISOString(),
     messageCount: messages.length,
-  }),
+  })
 );
 ```
 
@@ -446,8 +446,8 @@ pnpm add @upstash/redis @upstash/ratelimit
 
 ```typescript
 // lib/rate-limit.ts
-import { Ratelimit } from "@upstash/ratelimit";
-import { Redis } from "@upstash/redis";
+import { Ratelimit } from '@upstash/ratelimit';
+import { Redis } from '@upstash/redis';
 
 const redis = new Redis({
   url: process.env.UPSTASH_REDIS_REST_URL!,
@@ -456,7 +456,7 @@ const redis = new Redis({
 
 export const rateLimiter = new Ratelimit({
   redis,
-  limiter: Ratelimit.slidingWindow(10, "1 m"), // 10 requests per minute
+  limiter: Ratelimit.slidingWindow(10, '1 m'), // 10 requests per minute
   analytics: true,
 });
 ```
@@ -465,11 +465,11 @@ export const rateLimiter = new Ratelimit({
 
 ```typescript
 // app/api/chat/route.ts
-import { rateLimiter } from "@/lib/rate-limit";
+import { rateLimiter } from '@/lib/rate-limit';
 
 export async function POST(req: Request) {
   // Get client IP
-  const ip = req.headers.get("x-forwarded-for") || "unknown";
+  const ip = req.headers.get('x-forwarded-for') || 'unknown';
 
   // Check rate limit
   const { success, limit, remaining, reset } = await rateLimiter.limit(ip);
@@ -477,18 +477,18 @@ export async function POST(req: Request) {
   if (!success) {
     return new Response(
       JSON.stringify({
-        error: "Rate limit exceeded. Please try again later.",
+        error: 'Rate limit exceeded. Please try again later.',
         reset: new Date(reset).toISOString(),
       }),
       {
         status: 429,
         headers: {
-          "Content-Type": "application/json",
-          "X-RateLimit-Limit": limit.toString(),
-          "X-RateLimit-Remaining": remaining.toString(),
-          "X-RateLimit-Reset": new Date(reset).toISOString(),
+          'Content-Type': 'application/json',
+          'X-RateLimit-Limit': limit.toString(),
+          'X-RateLimit-Remaining': remaining.toString(),
+          'X-RateLimit-Reset': new Date(reset).toISOString(),
         },
-      },
+      }
     );
   }
 

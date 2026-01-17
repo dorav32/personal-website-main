@@ -1,22 +1,22 @@
-import type { Metadata } from "next";
-import Image from "next/image";
+import type { Metadata } from 'next';
+import Image from 'next/image';
 
-import { Container } from "../components/Container";
-import { Section } from "../components/Section";
-import { Tag } from "../components/Tag";
-import { Timeline, TimelineItem } from "../components/Timeline";
-import { profile } from "../../content/profile";
-import dor from "../dor.jpeg";
+import { Container } from '../components/Container';
+import { Section } from '../components/Section';
+import { Tag } from '../components/Tag';
+import { Timeline, TimelineItem } from '../components/Timeline';
+import { profile } from '../../content/profile';
+import dor from '../dor.jpeg';
 
 export const metadata: Metadata = {
-  title: "About",
+  title: 'About',
   description:
-    "About Dor Avraham — Computer Science Graduate | Full-Stack Developer. Skills in React, Node.js, Python, and problem-solving.",
+    'About Dor Avraham — Computer Science Graduate | Full-Stack Developer. Skills in React, Node.js, Python, and problem-solving.',
   openGraph: {
-    title: "About · doravraham",
+    title: 'About · doravraham',
     description:
-      "About Dor Avraham — Computer Science Graduate | Full-Stack Developer. Skills in React, Node.js, Python, and problem-solving.",
-    url: "/about",
+      'About Dor Avraham — Computer Science Graduate | Full-Stack Developer. Skills in React, Node.js, Python, and problem-solving.',
+    url: '/about',
   },
 };
 
@@ -139,7 +139,7 @@ export default function AboutPage() {
                     <li key={ed.school}>
                       <span className="font-medium text-zinc-700 dark:text-zinc-300">
                         {ed.school}
-                      </span>{" "}
+                      </span>{' '}
                       — {ed.degree}
                     </li>
                   ))}
