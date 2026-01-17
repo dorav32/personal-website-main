@@ -83,7 +83,9 @@ export default function RootLayout({
       >
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify([websiteJsonLd, personJsonLd]) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([websiteJsonLd, personJsonLd]),
+          }}
         />
         <div className="min-h-screen bg-zinc-50 text-zinc-950 dark:bg-black dark:text-zinc-50">
           <Nav />

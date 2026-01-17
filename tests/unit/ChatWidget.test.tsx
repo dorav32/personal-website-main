@@ -40,7 +40,9 @@ describe('ChatWidget', () => {
     await user.click(openButton);
 
     // Find the header close button using distinct aria-label
-    const headerCloseButton = screen.getByRole('button', { name: 'Close chat panel' });
+    const headerCloseButton = screen.getByRole('button', {
+      name: 'Close chat panel',
+    });
     expect(headerCloseButton).toBeInTheDocument();
 
     // Close widget using header button
