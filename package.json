@@ -7,15 +7,15 @@
     "dev:vercel": "vc dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
+    "lint": "eslint .",
+    "format:check": "prettier --check .",
     "typecheck": "tsc --noEmit",
     "test": "pnpm test:unit && pnpm test:integration",
     "test:unit": "vitest run tests/unit",
     "test:integration": "vitest run tests/integration",
     "test:watch": "vitest",
-    "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm format:check",
-    "format": "prettier . --write",
-    "format:check": "prettier . --check"
+    "check": "npm run lint && npm run format:check && npm run typecheck && npm test",
+    "format": "prettier . --write"
   },
   "dependencies": {
     "@ai-sdk/react": "^2.0.115",
