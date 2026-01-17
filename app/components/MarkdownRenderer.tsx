@@ -90,7 +90,7 @@ export function MarkdownRenderer({ content, className = '' }: MarkdownRendererPr
           li: ({ ...props }) => <li className={MARKDOWN_STYLES.textSmall} {...props} />,
           // Code blocks
           code: ({ className, children, ...props }) => (
-            <CodeComponent className={className} {...props}>
+            <CodeComponent className={className ?? null} {...props}>
               {children}
             </CodeComponent>
           ),
