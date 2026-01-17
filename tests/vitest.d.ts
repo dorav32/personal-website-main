@@ -1,7 +1,7 @@
 /// <reference types="vitest/globals" />
 /// <reference types="@testing-library/jest-dom" />
 
-import type { A11yCheckableContext, A11yConfig } from '@sa11y/assert';
+import type { A11yConfig } from '@sa11y/assert';
 
 declare module 'vitest' {
   interface Assertion<T = unknown> {
